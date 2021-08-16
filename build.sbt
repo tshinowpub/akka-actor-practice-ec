@@ -1,4 +1,5 @@
-import Dependencies.{akka, logback, slf4j}
+import Dependencies._
+import Settings._
 
 name := "akka-actor-practice-ec"
 
@@ -8,7 +9,7 @@ scalaVersion := "2.13.6"
 
 lazy val root = (project in file("."))
   .aggregate(
-    akkaActorShop,
+    akkaActorShop
   )
 
 lazy val akkaActorShop: Project = (project in file("akka-actor-shop"))
