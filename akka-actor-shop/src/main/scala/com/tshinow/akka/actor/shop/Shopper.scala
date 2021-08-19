@@ -5,7 +5,8 @@ import akka.actor.typed.Behavior
 
 object Shopper {
 
-  sealed trait ShopperCommand
+  trait ShopperCommand
+
   final case class GetSession() extends ShopperCommand
 
   def apply(): Behavior[ShopperCommand] = Behaviors.receive { (context, message) =>

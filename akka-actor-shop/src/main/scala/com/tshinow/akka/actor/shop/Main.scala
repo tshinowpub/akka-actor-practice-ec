@@ -5,7 +5,9 @@ import akka.actor.typed.{ ActorSystem, Behavior }
 
 object Main extends App {
 
-  def apply(): Behavior[Cart.Cart] = Behaviors.setup { context =>
+  final case class BasketStart(name: String)
+
+  def apply(): Behavior[BasketStart] = Behaviors.setup { context =>
     val shopper = context.spawn(Shopper(), "shopper")
 
     shopper ! Shopper.GetSession()
