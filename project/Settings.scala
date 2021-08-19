@@ -1,13 +1,17 @@
 import sbt._
-import sbt.Keys.{scalaVersion, _}
+import sbt.Keys.{ scalaVersion, _ }
 import Dependencies._
 import org.scalafmt.sbt.ScalafmtPlugin.autoImport._
+import scalafix.sbt.ScalafixPlugin.autoImport.{ scalafixScalaBinaryVersion, scalafixSemanticdb }
 
 object Settings {
   val baseSettings = Seq(
-    organization := "com.tshinow",
-    version := "1.0.0-SNAPSHOT",
-    scalaVersion := "2.13.6",
+    organization                           := "com.tshinow",
+    version                                := "1.0.0-SNAPSHOT",
+    scalaVersion                           := "2.13.6",
+    ThisBuild / scalafixScalaBinaryVersion := CrossVersion.binaryScalaVersion(scalaVersion.value),
+    semanticdbEnabled                      := true,
+    semanticdbVersion                      := scalafixSemanticdb.revision,
     scalacOptions ++=
       Seq(
         "-feature",
