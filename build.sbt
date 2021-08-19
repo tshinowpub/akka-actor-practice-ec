@@ -28,3 +28,6 @@ lazy val akkaActorShop: Project = (project in file("akka-actor-shop"))
       akka.testKit.typed % Test
     )
   )
+
+addCommandAlias("lint", ";scalafmtCheck;Test/scalafmtCheck;scalafmtSbtCheck;scalafixAll --check")
+addCommandAlias("fmt", ";scalafmtAll;scalafmtSbt;scalafix RemoveUnused")

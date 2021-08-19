@@ -1,6 +1,7 @@
 import sbt._
 import sbt.Keys.{scalaVersion, _}
 import Dependencies._
+import org.scalafmt.sbt.ScalafmtPlugin.autoImport._
 
 object Settings {
   val baseSettings = Seq(
@@ -22,6 +23,7 @@ object Settings {
       ),
     libraryDependencies ++= Seq(
       scalatest % Test
-    )
+    ),
+    Compile / scalafmtOnCompile := true
   )
 }
