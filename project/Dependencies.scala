@@ -5,7 +5,7 @@ object Version {
   val scalaTest = "3.2.9"
   val akka      = "2.6.17"
 
-  val logback = "1.2.5"
+  val logback = "1.2.7"
   val slf4j   = "1.7.32"
 }
 
