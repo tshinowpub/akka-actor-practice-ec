@@ -6,6 +6,9 @@ object Version {
   val akka      = "2.6.17"
   val akkaHttp  = "10.2.7"
 
+  val akkaPersistenceDynamoDBJournal = "1.1.176"
+  val akkaPersistenceS3Snapshot      = "1.1.74"
+
   val logback = "1.2.7"
   val slf4j   = "1.7.32"
 }
@@ -46,6 +49,15 @@ object Dependencies {
       val classic = "com.typesafe.akka" %% "akka-testkit"             % Version.akka
       val typed   = "com.typesafe.akka" %% "akka-actor-testkit-typed" % Version.akka
     }
+  }
+
+  object j5ik2o {
+
+    val akkaPersistenceDynamoDBJournal =
+      "com.github.j5ik2o" %% "akka-persistence-dynamodb-journal" % Version.akkaPersistenceDynamoDBJournal
+
+    val akkaPersistenceS3Snapshot =
+      "com.github.j5ik2o" %% "akka-persistence-s3-snapshot" % Version.akkaPersistenceS3Snapshot
   }
 
   object logback {
