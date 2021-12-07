@@ -4,6 +4,7 @@ object Version {
 
   val scalaTest = "3.2.9"
   val akka      = "2.6.17"
+  val akkaHttp  = "10.2.7"
 
   val logback = "1.2.7"
   val slf4j   = "1.7.32"
@@ -29,6 +30,16 @@ object Dependencies {
       val typed   = "com.typesafe.akka" %% "akka-persistence-typed"   % Version.akka
       val test    = "com.typesafe.akka" %% "akka-persistence-testkit" % Version.akka
     }
+
+    object clusterSharding {
+
+      val classic = "com.typesafe.akka" %% "akka-cluster-sharding"       % Version.akka
+      val typed   = "com.typesafe.akka" %% "akka-cluster-sharding-typed" % Version.akka
+    }
+
+    val http          = "com.typesafe.akka" %% "akka-http"            % Version.akkaHttp
+    val httpSprayJson = "com.typesafe.akka" %% "akka-http-spray-json" % Version.akkaHttp
+    val httpTestKit   = "com.typesafe.akka" %% "akka-http-testkit"    % Version.akkaHttp
 
     object testKit {
 
