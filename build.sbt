@@ -9,8 +9,19 @@ version := "0.1"
 scalaVersion := "2.13.6"
 
 lazy val root = (project in file("."))
+  .settings(
+    name := "akka-actor-shop root."
+  )
   .aggregate(
+    domain,
     akkaActorShop
+  )
+
+lazy val domain: Project = (project in file("domain"))
+  .settings(Settings.baseSettings)
+  .settings(
+    name        := "akka-actor-shop-domain",
+    description := "Akka Actor shop's domain model."
   )
 
 lazy val akkaActorShop: Project = (project in file("akka-actor-shop"))
