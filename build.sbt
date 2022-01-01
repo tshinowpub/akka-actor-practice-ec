@@ -41,6 +41,9 @@ lazy val akkaActorShop: Project = (project in file("akka-actor-shop"))
     ),
     Compile / scalafmtOnCompile := true
   )
+  .dependsOn(
+    domain
+  )
 
 addCommandAlias("lint", ";scalafmtCheck;Test/scalafmtCheck;scalafmtSbtCheck;scalafixAll --check")
 addCommandAlias("fmt", ";scalafmtAll;scalafmtSbt;scalafix RemoveUnused")
