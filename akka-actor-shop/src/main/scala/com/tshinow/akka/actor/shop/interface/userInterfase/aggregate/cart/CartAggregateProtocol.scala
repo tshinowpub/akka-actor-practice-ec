@@ -10,7 +10,9 @@ object CartAggregateProtocol {
       cartItem: String
   ) extends Command
 
-  sealed trait AddCartReply extends Reply
+  sealed trait AddItemReply extends Reply
 
-  case object AddCartSucceeded extends AddCartReply
+  case object AddItemSucceeded extends AddItemReply
+  case object ItemNotFound     extends AddItemReply
+  case object OutOfStock       extends AddItemReply
 }
