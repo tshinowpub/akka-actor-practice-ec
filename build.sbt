@@ -36,6 +36,8 @@ lazy val akkaActorShop: Project = (project in file("akka-actor-shop"))
       akka.slf4j,
       akka.actor.classic,
       akka.actor.typed,
+      akka.persistence.classic,
+      akka.persistence.typed,
       akka.testKit.classic % Test,
       akka.testKit.typed   % Test
     ),
