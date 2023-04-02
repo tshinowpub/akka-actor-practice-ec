@@ -6,7 +6,7 @@ name := "akka-actor-practice-ec"
 
 version := "0.1"
 
-scalaVersion := "2.13.6"
+scalaVersion := "2.13.10"
 
 lazy val root = (project in file("."))
   .settings(

@@ -8,7 +8,7 @@ object Settings {
   val baseSettings = Seq(
     organization                           := "com.tshinow",
     version                                := "1.0.0-SNAPSHOT",
-    scalaVersion                           := "2.13.6",
+    scalaVersion                           := "2.13.10",
     ThisBuild / scalafixScalaBinaryVersion := CrossVersion.binaryScalaVersion(scalaVersion.value),
     semanticdbEnabled                      := true,
     semanticdbVersion                      := scalafixSemanticdb.revision,

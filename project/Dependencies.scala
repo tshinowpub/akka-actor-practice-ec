@@ -3,7 +3,7 @@ import sbt._
 object Version {
 
   val scalaTest = "3.2.9"
-  val akka      = "2.6.17"
+  val akka      = "2.6.20"
   val akkaHttp  = "10.2.7"
 
   val akkaPersistenceDynamoDBJournal = "1.1.176"
