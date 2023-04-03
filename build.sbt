@@ -14,7 +14,8 @@ lazy val root = (project in file("."))
   )
   .aggregate(
     domain,
-    akkaActorShop
+    akkaActorShop,
+    writeMessageServer
   )
 
 lazy val domain: Project = (project in file("domain"))
@@ -29,6 +30,29 @@ lazy val akkaActorShop: Project = (project in file("akka-actor-shop"))
   .settings(
     name        := "akka-actor",
     description := "Akka Actor practice.",
+    libraryDependencies ++= Seq(
+      logback.classic,
+      slf4j.api,
+      slf4j.jclOverSlf4j,
+      akka.slf4j,
+      akka.actor.classic,
+      akka.actor.typed,
+      akka.persistence.classic,
+      akka.persistence.typed,
+      akka.testKit.classic % Test,
+      akka.testKit.typed   % Test
+    ),
+    Compile / scalafmtOnCompile := true
+  )
+  .dependsOn(
+    domain
+  )
+
+lazy val writeMessageServer: Project = (project in file("write-message-server"))
+  .settings(Settings.baseSettings)
+  .settings(
+    name        := "write-message-server",
+    description := "Write chat server in shop.",
     libraryDependencies ++= Seq(
       logback.classic,
       slf4j.api,
