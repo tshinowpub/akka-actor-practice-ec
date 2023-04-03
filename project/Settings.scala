@@ -20,7 +20,7 @@ object Settings {
         "-encoding",
         "UTF-8",
         "-language:_",
-        "-target:jvm-1.11",
+        "-release:17",
         "-Yrangepos",
         "-Ywarn-unused",
         "-Xfatal-warnings"
